@@ -20,16 +20,16 @@ struct Node {
 };
 
 void in_order_helper(int idx, vector<int>& res, const vector<Node>& tree) {
-        if (tree[idx].left != -1) {
-            in_order_helper(tree[idx].left, res, tree);
-        }
-
-        res.push_back(tree[idx].key);
-
-        if (tree[idx].right != -1) {
-            in_order_helper(tree[idx].right, res, tree);
-        }
+    if (tree[idx].left != -1) {
+        in_order_helper(tree[idx].left, res, tree);
     }
+
+    res.push_back(tree[idx].key);
+
+    if (tree[idx].right != -1) {
+        in_order_helper(tree[idx].right, res, tree);
+    }
+}
 
 bool is_sorted(vector<int>& arr) {
     if (arr.size() < 2) {
